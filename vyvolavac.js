@@ -44,11 +44,23 @@ function tahnoutJmeno() {
     jmena.splice(vyherniIndex, 1);
 
     // Výherní jméno si uložíme do pole k ostatním výherním
-    tazenaJmena.push(vyherniJmeno);
+    tazenaJmena.unshift(vyherniJmeno);
 
     let vyherce = document.querySelector('#vyherka');
     vyherce.textContent = vyherniJmeno;
 
     let seznam = document.querySelector('#seznam');
     seznam.textContent = tazenaJmena;
+
+    //pocitaadlo
+    let pocitadlo = document.querySelector('#pocitadlo');
+
+    //spocitat kolik je prvku v poli vyherni jmena
+    let pocetVytazenych = tazenaJmena.length;
+    console.log(tazenaJmena);
+    pocitadlo.textContent = pocetVytazenych;
+}
+
+function resetovat(){
+    location.reload();
 }
